@@ -43,7 +43,6 @@ public class ControleurPrincipal implements Controleur{
 		session =null;
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
-		//frame.setSize(816, 638);
 		frame.setSize(800, 600);
 		frame.setLocationRelativeTo(null);
 		Container panel = frame.getContentPane();
@@ -66,10 +65,8 @@ public class ControleurPrincipal implements Controleur{
 	}
 
 	/**
-	 * 
-	 * listenerButtonNouvellePartie
-	 * 
-	 */	
+	 * Listener for "New Session" button
+	 */
 	private void listenerButtonNouvellePartie()
 	{
 		vueMenu.getBoutonNouvellePartie().addMouseListener(new MouseListener() {
@@ -195,7 +192,7 @@ public class ControleurPrincipal implements Controleur{
 	
 	public void nouvelleSession(ParametreJeu parametreJeu)
 	{
-		master.lancerSession(parametreJeu);
+		master.launchSession(parametreJeu);
 		session = master.getSession();
 		session.LancerPartie();
 		ControleurPartie controleurPartie = new ControleurPartie(session,this);
@@ -207,7 +204,7 @@ public class ControleurPrincipal implements Controleur{
 
 	public void finSession()
 	{
-		master.arreterSession(session.getIdSession());
+		master.stopSession(session.getIdSession());
 		//session = master.getSession();
 		//session.LancerPartie();
 		//ControleurPartie controleurPartie = new ControleurPartie(session,this);
@@ -218,7 +215,7 @@ public class ControleurPrincipal implements Controleur{
 	
 	public void chargerSession(Session session)
 	{
-		master.chargerSession(session);
+		master.addSession(session);
 		this.session = session;
 		//session.LancerPartie();
 		ControleurPartie controleurPartie = new ControleurPartie(session,this);

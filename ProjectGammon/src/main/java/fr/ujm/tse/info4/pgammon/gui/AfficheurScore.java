@@ -29,7 +29,6 @@ public class AfficheurScore extends JPanel {
 		build();
 	}
 	
-
 	private void build() {
 		setLayout(new GridBagLayout());
 		label = new JLabel(String.valueOf(score));
@@ -82,7 +81,6 @@ public class AfficheurScore extends JPanel {
 		p = (couleur==CouleurCase.BLANC)?new Color(0xEEEEEE):new Color(0x111111);
 		g2.setPaint(p); 
 		g2.fillRect(0, 0, w, h); 
-
 		 
 		// Bordure
 		p = new Color(0x888888);
@@ -96,8 +94,6 @@ public class AfficheurScore extends JPanel {
 	
 	@Override
 	protected void paintBorder(Graphics g) {
-		
 		//super.paintBorder(g);
-		
 	}
 }

@@ -7,15 +7,12 @@
 //
 //
 
-
-
 package fr.ujm.tse.info4.pgammon.models;
 
 import java.util.HashMap;
 
 import org.jdom2.Attribute;
 import org.jdom2.Element;
-
 
 public class Session
 {
@@ -29,7 +26,9 @@ public class Session
 	private EtatSession etatSession;
 	private ParametreJeu parametreSession;
 	
-	public Session(int idSession,ParametreJeu parametreJeu)
+	public Session() {}
+	
+	public Session(int idSession, ParametreJeu parametreJeu)
 	{
 		couleurJoueurAnciennePartie = null;
 		this.idSession = idSession;
@@ -43,13 +42,6 @@ public class Session
 		nouvellePartie();
 	}
 	
-	public Session()
-	{
-		
-	}
-	
-
-	
 	public void finSession()
 	{
 		joueurGagnantSession.getStat().ajouterVictoire();
@@ -58,7 +50,6 @@ public class Session
 			parametreSession.getJoueurNoir().getStat().ajouterDefaite();
 		else
 			parametreSession.getJoueurBlanc().getStat().ajouterDefaite();
-	
 	}
 	
 	public void nouvellePartie()
@@ -84,23 +75,21 @@ public class Session
 		scores.put(parametreSession.getJoueur(CouleurVictorieuse),scores.get(parametreSession.getJoueur(CouleurVictorieuse))+videau);
 	}
 	
-	
-		public void finSession(Joueur joueurGagnantSession)
-		{
-			this.joueurGagnantSession = joueurGagnantSession;
-			finSession();
-		}
-
+	public void finSession(Joueur joueurGagnantSession)
+	{
+		this.joueurGagnantSession = joueurGagnantSession;
+		finSession();
+	}
 	
 	public Joueur meilleurJoueur()
-		{
-			if (scores.get(parametreSession.joueurBlanc) > scores.get(parametreSession.joueurNoir))
-					return parametreSession.joueurBlanc;
-			else if (scores.get(parametreSession.joueurBlanc) < scores.get(parametreSession.joueurNoir))
-				return parametreSession.joueurNoir;
-			else
-				return null;
-		}
+	{
+		if (scores.get(parametreSession.joueurBlanc) > scores.get(parametreSession.joueurNoir))
+			return parametreSession.joueurBlanc;
+		else if (scores.get(parametreSession.joueurBlanc) < scores.get(parametreSession.joueurNoir))
+			return parametreSession.joueurNoir;
+		else
+			return null;
+	}
 
 	public boolean verifFinSession()
 	{
@@ -120,6 +109,7 @@ public class Session
 		}
 		return false;
 	}
+	
 	/**
 	 * Sauvegarder tous les infos sous cette racine 
 	 * @param racine c'est la racine "Sessions" dans le fichier XML
@@ -171,6 +161,7 @@ public class Session
 		    
 		    partieEnCours.sauvegarder(session);
 	}
+	
 	/**
 	 * Charger tous les infos sous cette racine 
 	 * @param racine c'est la racine "Sessions" dans le fichier XML
@@ -218,7 +209,6 @@ public class Session
 		return true;
 	}
 
-
 	public int getIdSession() {
 		return idSession;
 	}
@@ -240,17 +230,11 @@ public class Session
 		if (joueurGagnantSession == null)
 			return false;
 		else
-			return true;
-		
-			
+			return true;	
 	}
 
 	public ParametreJeu getParametreSession() {
 		return parametreSession;
 	}
-
-
-
-
 }
 

@@ -1,4 +1,3 @@
-// 
 //
 //  @ Projet : Project Gammon
 //  @ Fichier : Master.java
@@ -6,9 +5,6 @@
 //  @ Auteurs : DONG Chuan, BONNETTO Benjamin, FRANCON Adrien, POTHELUNE Jean-Michel
 //
 //
-
-
-
 
 package fr.ujm.tse.info4.pgammon.models;
 
@@ -20,28 +16,28 @@ public class Master
 {
 	@SuppressWarnings("unused")
 	private static Master master;
-	private int idMax;
-	private int idDate;
+	private int idSession;
 	private ArrayList<Session> listSession;
 	private ControleurPrincipal controleurPrincipal;
 	
-	public Master()
-	{
-		setIdMax(1);
+	public Master() {
 		Calendar date = Calendar.getInstance();
-		idDate = 10000*date.get(Calendar.MONTH)+1000*date.get(Calendar.DATE)
-				+100*date.get(Calendar.HOUR)+10*date.get(Calendar.MINUTE)+date.get(Calendar.SECOND);
-		setControleurPrincipal(new ControleurPrincipal(this));
+		idSession = 10000*date.get(Calendar.MONTH)
+				+ 1000*date.get(Calendar.DATE)
+				+ 100*date.get(Calendar.HOUR)
+				+ 10*date.get(Calendar.MINUTE)
+				+ date.get(Calendar.SECOND);
+		controleurPrincipal = new ControleurPrincipal(this);
 		listSession = new ArrayList<Session>();
 	}
 	
-	public void lancerSession(ParametreJeu parametreJeu)
-	{
-		if (peutLancerSession())
-		{
-			listSession.add(new Session(idDate,parametreJeu));
-			//listSession.add(new Session(idMax,parametreJeu));
-			//idMax +=1;
+	public static void main(String[] args) {
+		master = new Master();
+	}
+	
+	public void launchSession(ParametreJeu parametreJeu){
+		if (isSessionLaunchable()){
+			listSession.add(new Session(idSession,parametreJeu));
 		}
 		try {
 			GestionDeSession gestion = GestionDeSession.getGestionDeSession();
@@ -49,27 +45,18 @@ public class Master
 		} catch (Exception e) {
 			
 		}
-
 	}
 	
-	public void chargerSession(Session session)
-	{
-		if (peutLancerSession())
-		{
+	public void addSession(Session session){
+		if (isSessionLaunchable()){
 			listSession.add(session);
-			//listSession.add(new Session(idMax,parametreJeu));
-			//idMax +=1;
 		}	
 	}
 	
-	public void arreterSession(int id)
-	{
-		if(listSession.size()!=0)
-		{
+	public void stopSession(int id) {
+		if(listSession.size()!=0) {
 			for (Session session : listSession) {
-			
-				if(session.getIdSession() == id)
-				{
+				if(session.getIdSession() == id) {
 					listSession.remove(session);
 					break;
 				}
@@ -77,23 +64,13 @@ public class Master
 		}	
 	}
 
-
-	public boolean peutLancerSession()
-	{
-		
+	public boolean isSessionLaunchable() {	
 		if (listSession.size() != 1 )
 			return true;
 		return false;
 	}
 	
-	public static void main(String[] args) 
-	{
-		master = new Master();
-
-	}
-	
-	public Session getSession() 
-	{
+	public Session getSession() {
 		// a modifier pour le multi THREAD
 		return listSession.get(listSession.size()-1);
 	}
@@ -106,13 +83,4 @@ public class Master
 		this.controleurPrincipal = controleurPrincipal;
 	}
 
-	public int getIdMax() {
-		return idMax;
-	}
-
-	public void setIdMax(int idMax) {
-		this.idMax = idMax;
-	}
-	
-	
 }
