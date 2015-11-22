@@ -26,7 +26,6 @@ public class PanelEnCoursVueBas extends JPanel{
 		
 		private int scorej1;
 		private int scorej2;
-		
 
 	/**
 	 * Constructeur de la classe
@@ -44,14 +43,13 @@ public class PanelEnCoursVueBas extends JPanel{
 		//panel du bas
 		//
 		
-		
 		//composant et label d'aide
 		help = new MonochromeIconButton(IconMonochromeType.AIDE,"MonochromeIconButton","NOIR");
 		help.setSizeBig();
 		help.setBounds(600, 5, help.getPreferredSize().width, help.getPreferredSize().height);
 		add(help);
 		
-		JLabel labhelp = new JLabel("Règles");
+		JLabel labhelp = new JLabel("Rules");
 		labhelp.setForeground(new Color(0xCCCCCC));
 		labhelp.setBounds(610, 50, 80, 60);
 		add(labhelp);
@@ -75,7 +73,7 @@ public class PanelEnCoursVueBas extends JPanel{
 		x_black.setBounds(500, 5, x_black.getPreferredSize().width, x_black.getPreferredSize().height);
 		add(x_black);
 		
-		JLabel labx_black = new JLabel("Interrompre session");
+		JLabel labx_black = new JLabel("Interrupt session");
 		labx_black.setForeground(new Color(0xCCCCCC));
 		labx_black.setBounds(470, 50, 130, 60);
 		add(labx_black);

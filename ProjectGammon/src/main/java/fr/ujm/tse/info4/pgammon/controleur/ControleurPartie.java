@@ -369,7 +369,7 @@ private void listenerBoutonAide(){
 						controleurTablier.getHorloge().restart();
 					if(!session.getPartieEnCours().hasCoupPossible())
 					{
-						vuePartie.afficherFenetreDemande("Plus de coup possible","");
+						vuePartie.afficherFenetreDemande("No possible move","");
 						controleurTablier.changerTour();
 					}
 				}
@@ -464,21 +464,21 @@ private void listenerBoutonAide(){
 					if ((couleurVideau == CouleurCase.VIDE || session.getPartieEnCours().getJoueurEnCour() != couleurVideau)&& (session.getPartieEnCours().isTourFini() && !session.getPartieEnCours().isPartieFini()))
 					{
 						SortedSet<String> hs = new ConcurrentSkipListSet<>();
-						hs.add("Non");
-						hs.add("Oui");
-						vuePartie.afficherFenetreDemande("Accepter vous le videau ?", hs).addActionListener(new ActionListener() {
+						hs.add("No");
+						hs.add("Yes");
+						vuePartie.afficherFenetreDemande("Do you accept the doubling cube ?", hs).addActionListener(new ActionListener() {
 
 							@Override
 							public void actionPerformed(ActionEvent e) {
 
 								String action = e.getActionCommand();
-								if (action == "Oui")
+								if (action == "Yes")
 								{
 									couleurVideau = session.getPartieEnCours().getJoueurEnCour() ;
 									session.getPartieEnCours().doublerVideau();
 
 								}
-								else if (action == "Non")
+								else if (action == "No")
 								{
 									finPartie();
 									//if (!session.isSessionFini())
@@ -510,31 +510,29 @@ private void listenerBoutonAide(){
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
 				SortedSet<String> hs = new ConcurrentSkipListSet<>();
-				hs.add("Finir");
-				hs.add("Annuler");
-				hs.add("Sauvegarder");
-				vuePartie.afficherFenetreDemande("Que voulez-vous faire ?", hs).addActionListener(new ActionListener() {
+				hs.add("Finish");
+				hs.add("Cancel");
+				hs.add("Save");
+				vuePartie.afficherFenetreDemande("What do you want to do ?", hs).addActionListener(new ActionListener() {
 					
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
 						String action = e.getActionCommand();
-						if (action == "Finir")
+						if (action == "Finish")
 						{
 							if (session.meilleurJoueur() != null)
 							{
 								session.finSession(session.meilleurJoueur());
-								
 							}
 							((ControleurPrincipal)controleur).finSession();
 							controleur.retour();
 						}
-						else if (action == "Annuler")
-						{
-							
+						else if (action == "Cancel")
+						{	
 							
 						}
-						else if (action == "Sauvegarder")
+						else if (action == "Save")
 						{
 							try {
 								GestionDeSession gestion = GestionDeSession.getGestionDeSession();
@@ -576,16 +574,16 @@ private void listenerBoutonAide(){
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
 				SortedSet<String> hs = new ConcurrentSkipListSet<>();
-				hs.add("Finir");
-				hs.add("Annuler");
-				hs.add("Sauvegarder");
-				vuePartie.afficherFenetreDemande("Que voulez-vous faire ?", hs).addActionListener(new ActionListener() {
+				hs.add("Finish");
+				hs.add("Cancel");
+				hs.add("Save");
+				vuePartie.afficherFenetreDemande("What do you want to do ?", hs).addActionListener(new ActionListener() {
 					
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						
 						String action = e.getActionCommand();
-						if (action == "Finir")
+						if (action == "Finish")
 						{
 							if (session.meilleurJoueur() != null)
 							{
@@ -595,12 +593,12 @@ private void listenerBoutonAide(){
 							((ControleurPrincipal)controleur).finSession();
 							controleur.retour();
 						}
-						else if (action == "Annuler")
+						else if (action == "Cancel")
 						{
 							
 							
 						}
-						else if (action == "Sauvegarder")
+						else if (action == "Save")
 						{
 							try {
 								GestionDeSession gestion = GestionDeSession.getGestionDeSession();
@@ -683,7 +681,7 @@ private void listenerBoutonAide(){
 		if(session.verifFinSession())
 		{
 			session.finSession();
-			vuePartie.getPaneldroitrevoir().getLabnext().setText("<html>Finir<br>Session");
+			vuePartie.getPaneldroitrevoir().getLabnext().setText("<html>Finish<br>Session");
 			vuePartie.afficherFenetreDemande(session.getPartieEnCours().getParametreJeu().getJoueur(session.getPartieEnCours().getJoueurEnCour()).getPseudo() , " remporte la session!");
 		}
 		else

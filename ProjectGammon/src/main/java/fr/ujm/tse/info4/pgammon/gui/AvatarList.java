@@ -47,7 +47,7 @@ public class AvatarList extends JPanel{
 			});
 		}
 		
-		MonochromeButton closeBtn = new MonochromeButton("Annuler");
+		MonochromeButton closeBtn = new MonochromeButton("Cancel");
 		closeBtn.setBounds(450, 400, 200, 40);
 		closeBtn.addActionListener(new ActionListener() {
 			@Override
@@ -56,8 +56,7 @@ public class AvatarList extends JPanel{
 			}
 		});
 		
-		
-		ajouter = new MonochromeButton("Ajouter");
+		ajouter = new MonochromeButton("Add");
 		ajouter.setBounds(200, 400, 200, 40);
 		
 		bg = new OpaqueBG();
@@ -99,8 +98,4 @@ public class AvatarList extends JPanel{
 	public void setAjouter(MonochromeButton ajouter) {
 		this.ajouter = ajouter;
 	}
-	
-	
-
-	
 }

@@ -113,7 +113,7 @@ public class ControleurTablier implements Controleur{
 									partie.lancerDes();
 									if(!partie.hasCoupPossible())
 									{
-										vuePartie.afficherFenetreDemande("Plus de coup possible","");
+										vuePartie.afficherFenetreDemande("No possible coup","");
 										changerTour();
 									}
 								}
@@ -190,7 +190,7 @@ public class ControleurTablier implements Controleur{
 						}
 						else if(!partie.hasCoupPossible())
 						{
-							vuePartie.afficherFenetreDemande("Plus de coup possible","");
+							vuePartie.afficherFenetreDemande("No coup possible","");
 							changerTour();
 						}	
 					  
@@ -199,7 +199,6 @@ public class ControleurTablier implements Controleur{
 					  
 				  }
 			});
-
 		}
 		else
 		{
@@ -216,23 +215,17 @@ public class ControleurTablier implements Controleur{
 		return horloge;
 	}
 
-
 	@Override
 	public Controleur getControleur() {
 		return this;
 	}
-
 
 	@Override
 	public JFrame getFrame() {
 		return frame;
 	}
 
-
 	@Override
-	public void retour() {
-		
-		
-	}
+	public void retour() {}
 	
 }

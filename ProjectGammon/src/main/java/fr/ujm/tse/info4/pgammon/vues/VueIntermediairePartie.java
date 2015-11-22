@@ -110,12 +110,12 @@ public class VueIntermediairePartie extends MonochromeVue{
 		
 		//problème sur action de bouton donc effacement de ceux-ci
 		
-		boutonReprendre = new MonochromeButton("Charger");
+		boutonReprendre = new MonochromeButton("Load");
 		boutonReprendre.setBounds(300, 15, 200, 50);
 		add(boutonReprendre);
 		boutonReprendre.setVisible(false);
 		
-		boutonNouvellePartie = new MonochromeButton("Nouvelle partie");
+		boutonNouvellePartie = new MonochromeButton("New Game");
 		boutonNouvellePartie.setBounds(50, 15, 200, 50);
 		add(boutonNouvellePartie);
 		boutonNouvellePartie.setVisible(false);
@@ -137,7 +137,7 @@ public class VueIntermediairePartie extends MonochromeVue{
 		textNouvelleSession.setForeground(new Color(0xCCCCCC));
 		add(textNouvelleSession);
 		
-		textReprendreSession = new JLabel("Reprendre session");
+		textReprendreSession = new JLabel("Load Session");
 		textReprendreSession.setBounds(50, 15, 400, 50);
 		textReprendreSession.setFont(new Font("Arial",Font.BOLD,36));
 		textReprendreSession.setForeground(new Color(0xCCCCCC));

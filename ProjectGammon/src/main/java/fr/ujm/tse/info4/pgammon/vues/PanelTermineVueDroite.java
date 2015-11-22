@@ -18,22 +18,20 @@ public class PanelTermineVueDroite extends JPanel{
 	 * Cette classe permet de gérer la vue droite à la fin d'une partie
 	 * il y a notament la revue de partie et recommencer une partie
 	 */
-	
 
 	private static final long serialVersionUID = 1735758716220950070L;
 	//composante des images de revoir partie
-		//Composant du panel droit
-		private MonochromeIconButton next;
-		private MonochromeIconButton undo;
-		private MonochromeIconButton x_white;
-		private JLabel labnext;
+	//Composant du panel droit
+	private MonochromeIconButton next;
+	private MonochromeIconButton undo;
+	private MonochromeIconButton x_white;
+	private JLabel labnext;
 
 
-		/**
-		 * Constructeur de la classe
-		 */
+	/**
+	* Constructeur de la classe
+	*/
 	public PanelTermineVueDroite(){
-		
 		build();
 	}
 	
@@ -41,13 +39,10 @@ public class PanelTermineVueDroite extends JPanel{
 	private void build() {
 		setLayout(null);
 		setOpaque(false);
-		
 			
 			//
 			//panel du coté droit
 			//
-			
-			
 			
 			//setOpaque(true);
 			//bouton pour revoir la partie
@@ -56,7 +51,7 @@ public class PanelTermineVueDroite extends JPanel{
 			next.setBounds(10, 20, next.getPreferredSize().width, next.getPreferredSize().height);
 			add(next);
 			
-			labnext = new JLabel("<html>partie<br>suivante");
+			labnext = new JLabel("<html>Next<br>Game");
 			labnext.setForeground(new Color(0xCCCCCC));
 			labnext.setBounds(15, 70, 80, 60);
 			add(labnext);
@@ -76,15 +71,11 @@ public class PanelTermineVueDroite extends JPanel{
 			x_white.setBounds(10, 350, x_white.getPreferredSize().width, x_white.getPreferredSize().height);
 			add(x_white);
 			
-			JLabel labx_white = new JLabel("<html>Interrompre<br>la partie");
+			JLabel labx_white = new JLabel("<html>Interrupt<br>Game");
 			labx_white.setForeground(new Color(0xCCCCCC));
 			labx_white.setBounds(10, 400, 80, 60);
 			add(labx_white);
 			}
-		
-			
-	
-	
 	
 	/**
 	 * Getter du bouton suivant

@@ -16,16 +16,12 @@ import org.jdom2.Element;
 public class DeSixFaces
 {
 	/* VARIABLES */
-	
 	private int valeur;
 	private boolean isUtilise;
 	private CouleurCase couleurDe;
 	
 	/* FUNCTION */
-	public DeSixFaces()
-	{
-
-	}
+	public DeSixFaces() {}
 	
 	public DeSixFaces(CouleurCase couleurCase)
 	{
@@ -51,7 +47,6 @@ public class DeSixFaces
 		isUtilise= false;
 	}
 	
-	
 	public void sauvegarder(Element deSixFaces)
 	{
 		Element deSixFaceXML = new Element("deSixFace");
@@ -63,9 +58,9 @@ public class DeSixFaces
 		
 		Element isUtiliseXML = new Element("isUtilise");
 		if(isUtilise){
-			isUtiliseXML.setText("oui");
+			isUtiliseXML.setText("yes");
 		}else{
-			isUtiliseXML.setText("non");
+			isUtiliseXML.setText("no");
 		}
 		deSixFaceXML.addContent(isUtiliseXML);
 		
@@ -80,8 +75,8 @@ public class DeSixFaces
 		valeur = Integer.valueOf(deSixFace.getChildText("valeur"));
 		
 		switch(deSixFace.getChildText("isUtilise")){
-			case "oui":isUtilise = true;break;
-			case "non":isUtilise = false;
+			case "yes":isUtilise = true;break;
+			case "no":isUtilise = false;
 		}
 		
 		switch(deSixFace.getChildText("couleurDe")){

@@ -51,7 +51,7 @@ private void build() {
 		back.setBounds(10, 34, back.getPreferredSize().width, back.getPreferredSize().height);
 		add(back);
 		
-		JLabel labback = new JLabel("<html>Annuler<br>coup");
+		JLabel labback = new JLabel("<html>Cancel");
 		labback.setBounds(20, 79, 80, 60);
 		add(labback);
 		
@@ -62,7 +62,7 @@ private void build() {
 		dices.setBounds(10, 259, dices.getPreferredSize().width, dices.getPreferredSize().height);
 		add(dices);
 		
-		JLabel labdices = new JLabel("<html>Lancer<br>dés");
+		JLabel labdices = new JLabel("<html>Launch<br>Dice");
 		labdices.setForeground(new Color(0xCCCCCC));
 		labdices.setBounds(20, 304, 80, 60);
 		add(labdices);
@@ -73,7 +73,7 @@ private void build() {
 		videau.setBounds(10, 379, dices.getPreferredSize().width, dices.getPreferredSize().height);
 		add(videau);
 		
-		JLabel labvideau = new JLabel("<html>Lancer<br>videau");
+		JLabel labvideau = new JLabel("<html>Doubling<br>cube");
 		labvideau.setForeground(new Color(0xCCCCCC));
 		labvideau.setBounds(20, 429, 80, 60);
 		add(labvideau);

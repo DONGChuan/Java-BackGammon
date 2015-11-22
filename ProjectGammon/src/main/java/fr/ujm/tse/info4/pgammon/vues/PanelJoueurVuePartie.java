@@ -101,8 +101,8 @@ public class PanelJoueurVuePartie extends JPanel {
 		add(imgjoueur);
 
 		labNomJoueur = new JLabel();
-		couppossible = new MonochromeCheckbox("<html> Afficher les <br> coups possibles");
-		conseilcoup = new MonochromeCheckbox("<html> conseiller le <br> prochain coup");
+		couppossible = new MonochromeCheckbox("<html> Show <br> possible moves");
+		conseilcoup = new MonochromeCheckbox("<html> Suggest <br> next move");
 		
 		//cette ligne permet d'afficher le conseil coup
 		//mais il n'est pas encore implémenté donc on le cache dés le début

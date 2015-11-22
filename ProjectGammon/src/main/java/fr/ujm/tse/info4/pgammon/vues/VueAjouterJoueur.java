@@ -73,7 +73,7 @@ public class VueAjouterJoueur extends MonochromePanel{
 		boutonSupprimerAvatar.setBounds(150, 180, 230, 40);
 		add(boutonSupprimerAvatar);
 		
-		boutonAnnuler = new MonochromeButton("Cancle");
+		boutonAnnuler = new MonochromeButton("Cancel");
 		boutonAnnuler.setBounds(40, 245, 150, 40);
 		add(boutonAnnuler);
 		

@@ -44,7 +44,7 @@ public class PanelParametre extends MonochromePanel{
 	 * Constructeur de la classe
 	 */
 	public PanelParametre(){
-		super("Paramètres");
+		super("Parameters");
 		
 		build();
 		
@@ -64,13 +64,13 @@ public class PanelParametre extends MonochromePanel{
 		nbTemps = 30;
 		
 		text_parties = new JLabel();
-		text_parties.setText("Score à atteindre");
+		text_parties.setText("Score to achieve");
 		text_parties.setForeground(new Color(0xCCCCCC));
 		text_parties.setBounds(20, 30, 300, 50);
 		add(text_parties);
 		
 		text_temps = new JLabel();
-		text_temps.setText("Limite de temps par tour");
+		text_temps.setText("Time limit per turn");
 		text_temps.setForeground(new Color(0xCCCCCC));
 		text_temps.setBounds(20, 150, 300, 50);
 		add(text_temps);
@@ -116,7 +116,7 @@ public class PanelParametre extends MonochromePanel{
 			infinite_temps.setBounds(290, 200, infinite_temps.getPreferredSize().width, infinite_temps.getPreferredSize().height);
 			add(infinite_temps);
 			
-			videau = new MonochromeCheckbox("Utiliser le videau");
+			videau = new MonochromeCheckbox("Doubling Cube");
 			videau.setBounds(100, 270, 150, 50);
 			videau.setSelected(true);
 			add(videau);

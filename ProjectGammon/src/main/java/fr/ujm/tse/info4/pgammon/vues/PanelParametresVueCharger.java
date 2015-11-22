@@ -58,7 +58,7 @@ public class PanelParametresVueCharger extends MonochromePanel{
 	 * @param s on passe une session en paramètre
 	 */
 	public PanelParametresVueCharger(Session s){
-		super("Paramètres");
+		super("Parameters");
 		session = s;
 		
 		build();
@@ -105,10 +105,10 @@ public class PanelParametresVueCharger extends MonochromePanel{
 		}
 		
 		if(session.getPartieEnCours().getParametreJeu().isUtiliseVideau() == true){
-			text_videau.setText("Le videau est utilisé");
+			text_videau.setText("Doubling cube is used");
 		}
 		else{
-			text_videau.setText("Le videau n'est pas utilisé");
+			text_videau.setText("Doubling cube is not used");
 		}
 		
 	}

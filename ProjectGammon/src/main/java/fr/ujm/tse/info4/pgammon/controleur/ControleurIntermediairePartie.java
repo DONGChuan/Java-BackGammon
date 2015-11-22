@@ -131,12 +131,12 @@ public class ControleurIntermediairePartie implements Controleur{
 				Player jNoir = vueCreationPartie.getVueNouvelleSession().getPanelJoueur2().getJoueur();
 				
 				if(jBlanc == null || jNoir == null){
-					vueCreationPartie.afficherFenetreDemande("Oups!","Choisissez des joueurs!");
+					vueCreationPartie.afficherFenetreDemande("Oups!","Please choose players!");
 					return;
 				}
 				
 				if(jBlanc == jNoir){
-					vueCreationPartie.afficherFenetreDemande("Oups!", "Les joueurs sont identiques!");
+					vueCreationPartie.afficherFenetreDemande("Oups!", "Players chosen are the same!");
 					return;
 				}
 				//Creation des paramétres de jeu.
@@ -163,7 +163,7 @@ public class ControleurIntermediairePartie implements Controleur{
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				if(vueCreationPartie.getVueChargerPartie().getSession() == null){
-					vueCreationPartie.afficherFenetreDemande("Oups!", "Pas de session séléctionnée");
+					vueCreationPartie.afficherFenetreDemande("Oups!", "No session selected");
 				}
 				else{
 					vueCreationPartie.setVisible(false);

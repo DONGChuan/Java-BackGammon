@@ -177,12 +177,9 @@ public class PanelJoueur extends MonochromePanel{
 			imgjoueur.setBounds(15, 40, 50, 50);
 			add(imgjoueur);
 			
-			
 			affichestat = new JLabel();
-			couppossible = new MonochromeCheckbox("<html> Afficher les <br> coups possibles");
-			conseilcoup = new MonochromeCheckbox("<html> conseiller le <br> prochain coup");
-			
-			
+			couppossible = new MonochromeCheckbox("<html> Show <br> possible moves");
+			conseilcoup = new MonochromeCheckbox("<html> Suggest <br> next move");
 			
 			//affichage des stats du joueur
 			affichestat.setForeground(new Color(0xCCCCCC));
