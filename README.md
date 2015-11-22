@@ -3,7 +3,14 @@ BackGammon Java
 
 [BackGammon](https://en.wikipedia.org/wiki/Backgammon) is one of the oldest board games known. This project is to realize this game by Java.
 
-In fact, the original purpose of this project is for courses of my school [Telecom Saint Etienne](https://www.telecom-st-etienne.fr/). We are required to make this project during 5-days. This project is a summary of many other courses: Java, Design Patterns, Project Management, etc.
+In fact, the original purpose of this project is for courses of my school [Telecom Saint Etienne](https://www.telecom-st-etienne.fr/). We are required to make this project during 5-days by a team of four. This project is a summary of many other courses: Java, Design Patterns, Project Management, etc.
+
+The main points in this project:
+* Java
+* Swing
+* MVC
+* XML
+* JUnit
 
 ## Screenshots
 ------------------
@@ -20,6 +27,12 @@ Here are some screenshots of the game
 
 ## ToDo
 ------------------
+
+- [] Debug for sure
+- [] Translate it in english
+- [] Update UI
+- [] Update code structure  
+- [] To be added more ...
 
 ## License
 ------------------
