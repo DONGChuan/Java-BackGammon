@@ -10,7 +10,7 @@ import org.jdom2.JDOMException;
 
 import fr.ujm.tse.info4.pgammon.models.CouleurCase;
 import fr.ujm.tse.info4.pgammon.models.GestionDeSession;
-import fr.ujm.tse.info4.pgammon.models.Joueur;
+import fr.ujm.tse.info4.pgammon.models.Player;
 import fr.ujm.tse.info4.pgammon.models.ParametreJeu;
 import fr.ujm.tse.info4.pgammon.vues.VueIntermediairePartie;
 
@@ -127,8 +127,8 @@ public class ControleurIntermediairePartie implements Controleur{
 				boolean videau = vueCreationPartie.getVueNouvelleSession().getPanelParamètre().getVideau().isSelected();
 				
 				
-				Joueur jBlanc =  vueCreationPartie.getVueNouvelleSession().getPanelJoueur1().getJoueur();
-				Joueur jNoir = vueCreationPartie.getVueNouvelleSession().getPanelJoueur2().getJoueur();
+				Player jBlanc =  vueCreationPartie.getVueNouvelleSession().getPanelJoueur1().getJoueur();
+				Player jNoir = vueCreationPartie.getVueNouvelleSession().getPanelJoueur2().getJoueur();
 				
 				if(jBlanc == null || jNoir == null){
 					vueCreationPartie.afficherFenetreDemande("Oups!","Choisissez des joueurs!");
@@ -240,7 +240,7 @@ public class ControleurIntermediairePartie implements Controleur{
 		//build();
 	}
 	
-	public void retour(Joueur j) {
+	public void retour(Player j) {
 		getFrame().setContentPane(vueCreationPartie);
 		vueCreationPartie.setVisible(true);
 		if (joueurEnCourDeModification == CouleurCase.BLANC)

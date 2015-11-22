@@ -15,7 +15,7 @@ import fr.ujm.tse.info4.pgammon.gui.ImageAvatar;
 import fr.ujm.tse.info4.pgammon.gui.MonochromeButton;
 import fr.ujm.tse.info4.pgammon.gui.MonochromeCheckbox;
 import fr.ujm.tse.info4.pgammon.gui.MonochromePanel;
-import fr.ujm.tse.info4.pgammon.models.Joueur;
+import fr.ujm.tse.info4.pgammon.models.Player;
 import fr.ujm.tse.info4.pgammon.models.NiveauAssistant;
 
 public class PanelVueListeJoueurDescription extends MonochromePanel{
@@ -25,7 +25,7 @@ public class PanelVueListeJoueurDescription extends MonochromePanel{
 	 */
 	private static final long serialVersionUID = -7183137442304137995L;
 
-	private Joueur joueur;
+	private Player joueur;
 
 
 	public static final String pionblanc = "images/big_pion_blanc.png";
@@ -49,7 +49,7 @@ public class PanelVueListeJoueurDescription extends MonochromePanel{
 	 * Constructeur du panel de la desciption du joueur
 	 * @param j joueur passé en paramètre
 	 */
-	public PanelVueListeJoueurDescription(Joueur j){
+	public PanelVueListeJoueurDescription(Player j){
 		super("Description");
 		joueur=j;
 
@@ -62,7 +62,7 @@ public class PanelVueListeJoueurDescription extends MonochromePanel{
 	 * Setter de joueur
 	 * @param j change la valeur du joueur
 	 */
-	public void setJoueur(Joueur j){
+	public void setJoueur(Player j){
 		joueur=j;
 		updateData();
 	}
@@ -158,24 +158,22 @@ public class PanelVueListeJoueurDescription extends MonochromePanel{
 		add(imagejoueur);
 
 		JLabel textStat = new JLabel();
-		coupPossible = new MonochromeCheckbox("<html> Afficher les <br> coups possibles");
-		conseilCoup = new MonochromeCheckbox("<html> conseiller le <br> prochain coup");
+		coupPossible = new MonochromeCheckbox("<html> Show<br> possible movements");
+		conseilCoup = new MonochromeCheckbox("<html> Advise<br> next movements");
 		
 		//cette ligne permet d'afficher le conseil coup
 		//mais il n'est pas encore implémenté donc on le cache dés le début
 		conseilCoup.setVisible(false);
 
-		JLabel labStat = new JLabel("Statistiques");
+		JLabel labStat = new JLabel("Statistics");
 		labStat.setForeground(new Color(0xCCCCCC));
 		labStat.setBounds(15, 140, 200, 50);
 		add(labStat);
 
-
-		JLabel labConfig = new JLabel("Configuration de l'assistant");
+		JLabel labConfig = new JLabel("Configuration Wizard");
 		labConfig.setForeground(new Color(0xCCCCCC));
 		labConfig.setBounds(15, 290, 200, 50);
 		add(labConfig);
-
 
 		//creation panel pour positionnement text
 		JPanel posPseudo = new JPanel();
@@ -191,7 +189,6 @@ public class PanelVueListeJoueurDescription extends MonochromePanel{
 		nomJoueur.setHorizontalAlignment(0);
 		add(posPseudo);
 		posPseudo.add(nomJoueur);
-
 
 		//creation panel pour positionnement text des stats
 		JPanel posStat = new JPanel();
@@ -211,24 +208,23 @@ public class PanelVueListeJoueurDescription extends MonochromePanel{
 
 		//affichage des stats du joueur
 		textStat.setForeground(new Color(0xCCCCCC));
-		textStat.setText("<html>Parties jouées :" +
-				"<br>Victoires :" +
-				"<br>Défaites :" +
-				"<br>Pourcentage de victoire :" 
+		textStat.setText("<html>Games played :" +
+				"<br>Victores :" +
+				"<br>Defeat :" +
+				"<br>Win Percentage :" 
 				/*+"<br>Ennemi favori :" */);
 				
 		textStat.setBounds(15, 130, 140, 200);
 		textStat.setFont(new Font("Arial",Font.HANGING_BASELINE,12));
 
-
 		//creation composant checbox
 		conseilCoup.setForeground(new Color(0xCCCCCC));
-		conseilCoup.setBounds(180, 320, 150, 50);
+		conseilCoup.setBounds(180, 320, 200, 50);
 		conseilCoup.setOpaque(false);
 
 		//creation composant checbox
 		coupPossible.setForeground(new Color(0xCCCCCC));
-		coupPossible.setBounds(15, 320, 150, 50);
+		coupPossible.setBounds(15, 320, 200, 50);
 		coupPossible.setOpaque(false);
 
 		//conteneurimgpion
@@ -237,11 +233,11 @@ public class PanelVueListeJoueurDescription extends MonochromePanel{
 		add(conseilCoup);
 		add(textStat);
 
-		modifier = new MonochromeButton("Modifier");
+		modifier = new MonochromeButton("Modify");
 		modifier.setBounds(15, 380, 140, 50);
 		add(modifier);
 
-		supprimer = new MonochromeButton("Supprimer");
+		supprimer = new MonochromeButton("Delete");
 		supprimer.setBounds(175, 380, 140, 50);
 		add(supprimer);
 
@@ -249,9 +245,6 @@ public class PanelVueListeJoueurDescription extends MonochromePanel{
 		listenerboutonchangerConseilcoup();
 
 	}
-
-
-
 
 	/**
 	 * Getter du bouton modifier
@@ -323,7 +316,7 @@ public class PanelVueListeJoueurDescription extends MonochromePanel{
 	 * Getter du joueur j
 	 * @return retourne le joueur en cours
 	 */
-	public Joueur getJoueur() {
+	public Player getJoueur() {
 		return joueur;
 	}
 

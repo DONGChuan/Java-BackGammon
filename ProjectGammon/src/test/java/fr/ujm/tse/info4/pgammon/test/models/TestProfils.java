@@ -1,6 +1,6 @@
 package fr.ujm.tse.info4.pgammon.test.models;
 
-import fr.ujm.tse.info4.pgammon.models.Joueur;
+import fr.ujm.tse.info4.pgammon.models.Player;
 import fr.ujm.tse.info4.pgammon.models.NiveauAssistant;
 import fr.ujm.tse.info4.pgammon.models.Profils;
 
@@ -38,9 +38,9 @@ public class TestProfils {
 		 * 
 		 */
 		
-		Joueur A1 = tmp.getList().get(0);//JOJO
-		Joueur A2 = tmp.getList().get(1);//Adrien
-		Joueur A3 = tmp.getList().get(2);//JM
+		Player A1 = tmp.getList().get(0);//JOJO
+		Player A2 = tmp.getList().get(1);//Adrien
+		Player A3 = tmp.getList().get(2);//JM
 		// 3 fois avec A2, 2 fois avec A3
 		tmp.getList().get(0).getStat().ajouterAdversaire(A2);
 		tmp.getList().get(0).getStat().ajouterAdversaire(A2);

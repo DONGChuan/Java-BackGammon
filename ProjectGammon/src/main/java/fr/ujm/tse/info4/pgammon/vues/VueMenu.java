@@ -27,7 +27,6 @@ public class VueMenu extends MonochromeVue {
 	private ImageIcon icon;
 	
 	public VueMenu(){
-		
 		build();
 	}
 	
@@ -64,23 +63,23 @@ public class VueMenu extends MonochromeVue {
 
 		
 		
-		boutonNouvellePartie = new MonochromeButton("Nouvelle session");
+		boutonNouvellePartie = new MonochromeButton("New Session");
 		conteneurbouton.add(boutonNouvellePartie);
 		
-		boutonReprendrePartie = new MonochromeButton("Reprendre une session");
+		boutonReprendrePartie = new MonochromeButton("Load Session");
 		conteneurbouton.add(boutonReprendrePartie);
 		
-		boutonAjouter = new MonochromeButton("Liste des joueurs");
+		boutonAjouter = new MonochromeButton("Player List");
 		conteneurbouton.add(boutonAjouter);
 		
-		boutonAide = new MonochromeButton("Règles");
+		boutonAide = new MonochromeButton("Rules");
 		conteneurbouton.add(boutonAide);
 		
 		JPanel vide = new JPanel();
 		vide.setOpaque(false);
 		conteneurbouton.add(vide);
 		
-		boutonQuitter = new MonochromeButton("Quitter");
+		boutonQuitter = new MonochromeButton("Quit");
 		conteneurbouton.add(boutonQuitter);
 		
 		add(conteneurgrid);

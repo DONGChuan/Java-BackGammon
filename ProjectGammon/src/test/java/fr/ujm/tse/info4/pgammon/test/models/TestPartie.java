@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import fr.ujm.tse.info4.pgammon.models.DeSixFaces;
-import fr.ujm.tse.info4.pgammon.models.Joueur;
+import fr.ujm.tse.info4.pgammon.models.Player;
 import fr.ujm.tse.info4.pgammon.models.NiveauAssistant;
 import fr.ujm.tse.info4.pgammon.models.ParametreJeu;
 import fr.ujm.tse.info4.pgammon.models.Partie;
@@ -26,9 +26,9 @@ public class TestPartie {
 		System.out.println("Lancement du test de la Partie");
 
 		// creation des parametre et joueur
-		Joueur jBlanc = new Joueur(1, "ben", "beauGoss",
+		Player jBlanc = new Player(1, "ben", "beauGoss",
 				NiveauAssistant.NON_UTILISE);
-		Joueur jNoir = new Joueur(2, "JM", "null", NiveauAssistant.COMPLET);
+		Player jNoir = new Player(2, "JM", "null", NiveauAssistant.COMPLET);
 
 		ParametreJeu param = new ParametreJeu(0, 3, true, jBlanc, jNoir);
 		Partie p = new Partie(param);

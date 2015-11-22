@@ -5,7 +5,7 @@ import java.awt.event.MouseListener;
 import java.util.Calendar;
 import javax.swing.JFrame;
 
-import fr.ujm.tse.info4.pgammon.models.Joueur;
+import fr.ujm.tse.info4.pgammon.models.Player;
 import fr.ujm.tse.info4.pgammon.models.Profils;
 import fr.ujm.tse.info4.pgammon.vues.VueAjouterJoueur;
 import fr.ujm.tse.info4.pgammon.vues.VueListeJoueur;
@@ -64,7 +64,7 @@ public class ControleurListeJoueur implements Controleur{
 					if (isCharger)
 					{
 						if (vueListeJoueur.getPanelDescription().getJoueur() !=null){
-							Joueur j=vueListeJoueur.getPanelDescription().getJoueur();
+							Player j=vueListeJoueur.getPanelDescription().getJoueur();
 							((ControleurIntermediairePartie)controleur).retour(j);
 							vueListeJoueur.setVisible(false);
 							profil.sauvegarder();
@@ -240,7 +240,7 @@ public class ControleurListeJoueur implements Controleur{
 				if(flag){
 					boolean drapeau = true;
 					
-					Joueur tmpJoueur = new Joueur();		 
+					Player tmpJoueur = new Player();		 
 					tmpJoueur.setPseudo(vueAjouterJoueur.getnomPseudo().getText());	
 					tmpJoueur.setImageSource(vueListeJoueur.getVueAjouterJoueur().getChemin());
 					Calendar date = Calendar.getInstance();

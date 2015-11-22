@@ -22,7 +22,7 @@ import fr.ujm.tse.info4.pgammon.gui.MonochromeButton;
 import fr.ujm.tse.info4.pgammon.gui.MonochromeListe;
 import fr.ujm.tse.info4.pgammon.gui.MonochromeVue;
 import fr.ujm.tse.info4.pgammon.gui.OpaqueBG;
-import fr.ujm.tse.info4.pgammon.models.Joueur;
+import fr.ujm.tse.info4.pgammon.models.Player;
 import fr.ujm.tse.info4.pgammon.models.Profils;
 
 public class VueListeJoueur extends MonochromeVue{
@@ -34,10 +34,10 @@ public class VueListeJoueur extends MonochromeVue{
 	private static final long serialVersionUID = 9216988183357324981L;
 	
 	private Profils profil;
-	private Joueur j;
+	private Player j;
 	
 	private PanelVueListeJoueurDescription panelDescription;
-	private MonochromeListe<Joueur> listeJoueur;
+	private MonochromeListe<Player> listeJoueur;
 	
 	private String path = "";
 
@@ -130,19 +130,19 @@ public class VueListeJoueur extends MonochromeVue{
 		add(panelDescription);
 		panelDescription.setVisible(false);
 		
-		listeJoueur = new MonochromeListe<>("Joueurs enregistrés",profil.getList(),new JoueurCellRenderer());
+		listeJoueur = new MonochromeListe<>("Players saved",profil.getList(),new JoueurCellRenderer());
 		listeJoueur.setBounds(40, 30, 330, 450);
 		add(listeJoueur);
 		
-		boutonAjouter = new MonochromeButton("Ajouter un nouveau joueur");
+		boutonAjouter = new MonochromeButton("Add a new player");
 		boutonAjouter.setBounds(50, 505, 300, 50);
 		add(boutonAjouter);
 		
-		boutonSelectionner = new MonochromeButton("Selectionner");
+		boutonSelectionner = new MonochromeButton("Select");
 		boutonSelectionner.setBounds(420, 505, 150, 50);
 		add(boutonSelectionner);
 		
-		boutonRetour = new MonochromeButton("Retour");
+		boutonRetour = new MonochromeButton("Return");
 		boutonRetour.setBounds(600, 505, 150, 50);
 		add(boutonRetour);
 		
@@ -224,7 +224,7 @@ public class VueListeJoueur extends MonochromeVue{
 	 * Getter de l'affichage de la liste de joueur
 	 * @return Récupère la classe de la liste de joueur
 	 */
-	public MonochromeListe<Joueur> getListeJoueur() {
+	public MonochromeListe<Player> getListeJoueur() {
 		return listeJoueur;
 	}
 
@@ -278,21 +278,19 @@ public class VueListeJoueur extends MonochromeVue{
 		this.path = path;
 	}
 
-	
 	/**
 	 * Getter de joueur
 	 * @return Récupère le joueur en cours
 	 */
-	public Joueur getJ() {
+	public Player getJ() {
 		return j;
 	}
-	
 	
 	/**
 	 * Setter du joueur
 	 * @param j changer le joueur et met à jour la liste
 	 */
-	public void setJ(Joueur j) {
+	public void setJ(Player j) {
 		this.j = j;
 		updateData();
 	}
@@ -305,7 +303,6 @@ public class VueListeJoueur extends MonochromeVue{
 		return listeAvatar;
 	}
 
-	
 	/**
 	 * Getter de l'image du joueur 
 	 * @return Récupère l'image avatar du joueur 
@@ -342,9 +339,7 @@ public class VueListeJoueur extends MonochromeVue{
 		g2.setPaint(p); 
 		g2.drawRect(2, 0, w - 5 , h - 5 );
 		
-		
 		g2.dispose(); 
-		
 	}
 
 }

@@ -104,7 +104,7 @@ public class VueIntermediairePartie extends MonochromeVue{
 		vueChargerPartie.setBounds(0, 80, 794, 495);
 		add(vueChargerPartie);
 		
-		boutonRetour = new MonochromeButton("Retour");
+		boutonRetour = new MonochromeButton("Return");
 		boutonRetour.setBounds(550, 15, 200, 50);
 		add(boutonRetour);
 		
@@ -114,8 +114,6 @@ public class VueIntermediairePartie extends MonochromeVue{
 		boutonReprendre.setBounds(300, 15, 200, 50);
 		add(boutonReprendre);
 		boutonReprendre.setVisible(false);
-		
-		
 		
 		boutonNouvellePartie = new MonochromeButton("Nouvelle partie");
 		boutonNouvellePartie.setBounds(50, 15, 200, 50);
@@ -133,7 +131,7 @@ public class VueIntermediairePartie extends MonochromeVue{
 			vueChargerPartie.setVisible(true);
 		}
 		
-		textNouvelleSession = new JLabel("Nouvelle session");
+		textNouvelleSession = new JLabel("New session");
 		textNouvelleSession.setBounds(50, 15, 400, 50);
 		textNouvelleSession.setFont(new Font("Arial",Font.BOLD,36));
 		textNouvelleSession.setForeground(new Color(0xCCCCCC));

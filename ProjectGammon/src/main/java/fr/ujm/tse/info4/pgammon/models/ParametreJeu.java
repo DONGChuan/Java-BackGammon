@@ -20,11 +20,11 @@ public class ParametreJeu
 	private int secondesParTour;
 	private int nbrPartieGagnante;
 	private boolean utiliseVideau;
-	public Joueur joueurBlanc;
-	public Joueur joueurNoir;
+	public Player joueurBlanc;
+	public Player joueurNoir;
 	
 		
-	public ParametreJeu(int secondesParTour, int nbrPartieGagnante, boolean utiliseVideau,Joueur joueurBlanc,Joueur joueurNoir )
+	public ParametreJeu(int secondesParTour, int nbrPartieGagnante, boolean utiliseVideau,Player joueurBlanc,Player joueurNoir )
 	{
 		this.secondesParTour = secondesParTour;
 		this.nbrPartieGagnante = nbrPartieGagnante;
@@ -85,32 +85,32 @@ public class ParametreJeu
 		return utiliseVideau;
 	}
 
-	public Joueur getJoueurBlanc() {
+	public Player getJoueurBlanc() {
 		return joueurBlanc;
 	}
 
-	public Joueur getJoueurNoir() {
+	public Player getJoueurNoir() {
 		return joueurNoir;
 	}
 	
-	public Joueur getJoueur(CouleurCase couleurJoueur) {
+	public Player getJoueur(CouleurCase couleurJoueur) {
 		if (couleurJoueur == CouleurCase.BLANC)
 			return joueurBlanc;
 		else
 			return joueurNoir;
 	}
-	public Joueur getAdversaireJoueur(CouleurCase couleurJoueur) {
+	public Player getAdversaireJoueur(CouleurCase couleurJoueur) {
 		if (couleurJoueur == CouleurCase.BLANC)
 			return joueurNoir;
 		else
 			return joueurBlanc;
 	}
 
-	public void setJoueurNoir(Joueur _joueurNoir){
+	public void setJoueurNoir(Player _joueurNoir){
 		joueurNoir = _joueurNoir;
 	}
 
-	public void setJoueurBlanc(Joueur _joueurBlanc){
+	public void setJoueurBlanc(Player _joueurBlanc){
 		joueurBlanc = _joueurBlanc;
 	}
 

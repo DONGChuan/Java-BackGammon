@@ -13,7 +13,7 @@ import org.jdom2.Attribute;
 import org.jdom2.Element;
 
 
-public class Joueur
+public class Player
 {
 	private Integer id;
 	private String pseudo;
@@ -22,7 +22,7 @@ public class Joueur
 	private NiveauAssistant niveauAssistant;
 	private StatistiqueJoueur stat;
 	
-	public Joueur()
+	public Player()
 	{
 		this.id = 0;
 		this.pseudo="";
@@ -31,7 +31,7 @@ public class Joueur
 		stat = new StatistiqueJoueur();
 	}
 
-	public Joueur(Integer id,String pseudo,String imageSource,NiveauAssistant niveauAssistant)
+	public Player(Integer id,String pseudo,String imageSource,NiveauAssistant niveauAssistant)
 	{
 		this.id = id;
 		this.pseudo=pseudo;

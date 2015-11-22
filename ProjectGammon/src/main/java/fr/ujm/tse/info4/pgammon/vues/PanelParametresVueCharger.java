@@ -117,7 +117,6 @@ public class PanelParametresVueCharger extends MonochromePanel{
 		
 		setLayout(null);
 		
-		
 		//récupération de l'image
 		iconeparties = new ImageIcon(imgparties);
 		iconetime = new ImageIcon(imgtime);
@@ -152,13 +151,13 @@ public class PanelParametresVueCharger extends MonochromePanel{
 
 
 		text_parties = new JLabel();
-		text_parties.setText("Score à atteindre");
+		text_parties.setText("Score to achieve");
 		text_parties.setForeground(new Color(0xCCCCCC));
 		text_parties.setBounds(15, 180, 300, 50);
 		add(text_parties);
 
 		text_temps = new JLabel();
-		text_temps.setText("<html>Limitation du temps <br>par tour en seconde");
+		text_temps.setText("<html>Limitation of time <br>per turn");
 		text_temps.setForeground(new Color(0xCCCCCC));
 		text_temps.setBounds(165, 180, 300, 50);
 		add(text_temps);
@@ -205,7 +204,4 @@ public class PanelParametresVueCharger extends MonochromePanel{
 		g.drawImage(imgpionBlanc.getImage(),60,115,this);
 		g.drawImage(imgpionNoir.getImage(),187,115,this);
 	}
-	
-
-
 }

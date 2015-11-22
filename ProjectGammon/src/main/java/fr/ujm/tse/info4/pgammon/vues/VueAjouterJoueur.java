@@ -65,19 +65,19 @@ public class VueAjouterJoueur extends MonochromePanel{
 		imgjoueur.setBounds(25, 130, 105, 105);
 		add(imgjoueur);
 		
-		boutonChangerAvatar = new MonochromeButton("Changer l'avatar");
+		boutonChangerAvatar = new MonochromeButton("Add Avatar");
 		boutonChangerAvatar.setBounds(150, 130, 230, 40);
 		add(boutonChangerAvatar);
 		
-		boutonSupprimerAvatar = new MonochromeButton("Supprimer l'avatar");
+		boutonSupprimerAvatar = new MonochromeButton("Delete Avatar");
 		boutonSupprimerAvatar.setBounds(150, 180, 230, 40);
 		add(boutonSupprimerAvatar);
 		
-		boutonAnnuler = new MonochromeButton("Annuler");
+		boutonAnnuler = new MonochromeButton("Cancle");
 		boutonAnnuler.setBounds(40, 245, 150, 40);
 		add(boutonAnnuler);
 		
-		boutonEnregistrer = new MonochromeButton("Enregistrer");
+		boutonEnregistrer = new MonochromeButton("Save");
 		boutonEnregistrer.setBounds(200, 245, 150, 40);
 		add(boutonEnregistrer);
 		
@@ -143,18 +143,9 @@ public class VueAjouterJoueur extends MonochromePanel{
 	@Override
 	protected void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g.create(); 
-		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON); 
-		
-		//Paint p;
-		//int h = getHeight(); 
-		//int w = getWidth(); 
-		
-		
-		
-		
+		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON); 		
 		g2.dispose(); 
 		super.paintComponent(g);
-		
 	}
 	
 	/**

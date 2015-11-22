@@ -26,7 +26,7 @@ public class StatistiqueJoueur
 {
 	private Integer partiesJouees;
 	private Integer nbVictoires;
-	private Map<Joueur,Integer> nbrDePartieContreJoueur;
+	private Map<Player,Integer> nbrDePartieContreJoueur;
 	private float tempsJeu;
 	
 	public StatistiqueJoueur(){
@@ -44,13 +44,13 @@ public class StatistiqueJoueur
 	
 	public String getEnnemiFavoris()
 	{
-		Iterator<Entry<Joueur, Integer>> it = nbrDePartieContreJoueur.entrySet().iterator();
+		Iterator<Entry<Player, Integer>> it = nbrDePartieContreJoueur.entrySet().iterator();
 		int maxValue = 0; 
-		Joueur maxKey = null;
+		Player maxKey = null;
 		while (it.hasNext()) {
-			Map.Entry<Joueur, Integer> entry = it.next();
+			Map.Entry<Player, Integer> entry = it.next();
 			int value = entry.getValue();
-			Joueur key = entry.getKey();
+			Player key = entry.getKey();
 			if(value > maxValue){
 				maxKey = key;
 			}
@@ -75,7 +75,7 @@ public class StatistiqueJoueur
 		partiesJouees=partiesJouees+1;
 	}
 	
-	public void ajouterAdversaire(Joueur Adversaire)
+	public void ajouterAdversaire(Player Adversaire)
 	{	
 		if(nbrDePartieContreJoueur.get(Adversaire)==null){
 			nbrDePartieContreJoueur.put(Adversaire, 1);
@@ -106,11 +106,11 @@ public class StatistiqueJoueur
 			    Element nbrDePartieContreJoueurXML = new Element("nbrDePartieContreJoueur");
 			    statistiqueJoueur.addContent(nbrDePartieContreJoueurXML);
 			    
-			    Collection<Joueur> c = nbrDePartieContreJoueur.keySet();
-			    Iterator<Joueur> it = c.iterator();
+			    Collection<Player> c = nbrDePartieContreJoueur.keySet();
+			    Iterator<Player> it = c.iterator();
 			    
 			    while(it.hasNext()) {
-			    	Joueur j = it.next();
+			    	Player j = it.next();
 			    	Element joueurContre = new Element("joueurs");
 			    	nbrDePartieContreJoueurXML.addContent(joueurContre);
 				 
@@ -144,7 +144,7 @@ public class StatistiqueJoueur
 		return tempsJeu;
 	}
 	
-	public Map<Joueur, Integer> getNbrDePartieContreJoueur() {
+	public Map<Player, Integer> getNbrDePartieContreJoueur() {
 		return nbrDePartieContreJoueur;
 	}
 
@@ -171,7 +171,7 @@ public class StatistiqueJoueur
 	}
 
 	public void setNbrDePartieContreJoueur(
-			Map<Joueur, Integer> nbrDePartieContreJoueur) {
+			Map<Player, Integer> nbrDePartieContreJoueur) {
 		this.nbrDePartieContreJoueur = nbrDePartieContreJoueur;
 	}
 	

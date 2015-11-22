@@ -20,9 +20,9 @@ public class Session
 	private int idMaxPartie;
 	private Partie partieEnCours;
 
-	private Joueur joueurGagnantSession;
+	private Player joueurGagnantSession;
 	private CouleurCase couleurJoueurAnciennePartie;
-	private HashMap<Joueur, Integer> scores;
+	private HashMap<Player, Integer> scores;
 	private EtatSession etatSession;
 	private ParametreJeu parametreSession;
 	
@@ -35,7 +35,7 @@ public class Session
 		idMaxPartie=1;
 		etatSession = EtatSession.CONFIGURATION;
 		parametreSession = parametreJeu;
-		scores = new HashMap<Joueur, Integer>();
+		scores = new HashMap<Player, Integer>();
 		scores.put(parametreSession.getJoueurBlanc(),0);
 		scores.put(parametreSession.getJoueurNoir(),0);
 		joueurGagnantSession =null;
@@ -75,13 +75,13 @@ public class Session
 		scores.put(parametreSession.getJoueur(CouleurVictorieuse),scores.get(parametreSession.getJoueur(CouleurVictorieuse))+videau);
 	}
 	
-	public void finSession(Joueur joueurGagnantSession)
+	public void finSession(Player joueurGagnantSession)
 	{
 		this.joueurGagnantSession = joueurGagnantSession;
 		finSession();
 	}
 	
-	public Joueur meilleurJoueur()
+	public Player meilleurJoueur()
 	{
 		if (scores.get(parametreSession.joueurBlanc) > scores.get(parametreSession.joueurNoir))
 			return parametreSession.joueurBlanc;
@@ -183,17 +183,17 @@ public class Session
 			
 		int tmpID = Integer.valueOf(racine.getChild("session").getChild("joueurs").getChild("joueurNoir").getAttributeValue("id"));
 			
-		scores = new HashMap<Joueur,Integer>();
+		scores = new HashMap<Player,Integer>();
 			
 		Profils profil = Profils.getProfils();
-		Joueur JoueurNoir = profil.getJoueur(tmpID);
+		Player JoueurNoir = profil.getJoueur(tmpID);
 		if (JoueurNoir == null)
 			return false;
 		
 		scores.put(JoueurNoir,Integer.valueOf(racine.getChild("session").getChild("joueurs").getChild("joueurNoir").getChildText("score")));
 			
 		tmpID = Integer.valueOf(racine.getChild("session").getChild("joueurs").getChild("joueurBlanc").getAttributeValue("id"));
-		Joueur JoueurBlanc = profil.getJoueur(tmpID);
+		Player JoueurBlanc = profil.getJoueur(tmpID);
 		if (JoueurBlanc == null)
 			return false;
 		scores.put(JoueurBlanc,Integer.valueOf(racine.getChild("session").getChild("joueurs").getChild("joueurBlanc").getChildText("score")));
@@ -217,11 +217,11 @@ public class Session
 		return partieEnCours;
 	}
 
-	public Joueur getJoueurGagnantSession() {
+	public Player getJoueurGagnantSession() {
 		return joueurGagnantSession;
 	}
 	
-	public HashMap<Joueur, Integer> getScores() {
+	public HashMap<Player, Integer> getScores() {
 		return scores;
 	}
 

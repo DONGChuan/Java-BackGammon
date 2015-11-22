@@ -33,18 +33,10 @@ public class VueChargerPartie extends JPanel{
 	private static final long serialVersionUID = 2698819973936287585L;
 	
 	private MonochromeButton boutonCommencer;
-	
-
-
-
 	private Collection<Session> listSession;
-	
 	private MonochromeListe<Session>  mListeSessions;
-	
 	private Session session;
-
 	private PanelParametresVueCharger panelParametresVueCharger;
-
 
 	/**
 	 * Constructeur de la classe
@@ -99,15 +91,14 @@ public class VueChargerPartie extends JPanel{
 		add(panelParametresVueCharger);
 		panelParametresVueCharger.setVisible(false);
 		
-		
 		//il faut que j'ajoute les sessions
 		
-		mListeSessions = new MonochromeListe<>("Sessions enregistrées",listSession,new SessionCellRenderer());
+		mListeSessions = new MonochromeListe<>("Sessions saved",listSession,new SessionCellRenderer());
 		mListeSessions.setBounds(40, 20, 330, 400);
 		add(mListeSessions);
 		
 		
-		boutonCommencer = new MonochromeButton("Commencer");
+		boutonCommencer = new MonochromeButton("Start");
 		boutonCommencer.setBounds(300, 430, 200, 50);
 		add(boutonCommencer);
 		

@@ -14,7 +14,7 @@ import fr.ujm.tse.info4.pgammon.gui.JoueurCellRenderer;
 import fr.ujm.tse.info4.pgammon.gui.MonochromeButton;
 import fr.ujm.tse.info4.pgammon.gui.MonochromeListe;
 import fr.ujm.tse.info4.pgammon.gui.SessionCellRenderer;
-import fr.ujm.tse.info4.pgammon.models.Joueur;
+import fr.ujm.tse.info4.pgammon.models.Player;
 import fr.ujm.tse.info4.pgammon.models.NiveauAssistant;
 import fr.ujm.tse.info4.pgammon.models.ParametreJeu;
 import fr.ujm.tse.info4.pgammon.models.Session;
@@ -23,9 +23,9 @@ public class TestListe {
 
 	
 
-	private static MonochromeListe<Joueur> listeJoueur;
+	private static MonochromeListe<Player> listeJoueur;
 
-	private static Vector<Joueur> js;
+	private static Vector<Player> js;
 
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Test Design");
@@ -39,8 +39,8 @@ public class TestListe {
 		panel.setBackground(Color.BLACK);
 		
 		
-		Joueur jBlanc = new Joueur(1, "ben", Avatar.CHAT_JAUNE.getPath(),NiveauAssistant.NON_UTILISE);
-		Joueur jNoir = new Joueur(2, "JM", Avatar.CHEVAL.getPath(), NiveauAssistant.COMPLET);
+		Player jBlanc = new Player(1, "ben", Avatar.CHAT_JAUNE.getPath(),NiveauAssistant.NON_UTILISE);
+		Player jNoir = new Player(2, "JM", Avatar.CHEVAL.getPath(), NiveauAssistant.COMPLET);
 		
 		ParametreJeu param = new ParametreJeu(0, 3, true, jBlanc, jNoir);
 		ArrayList<Session> listSession;
@@ -57,8 +57,8 @@ public class TestListe {
 		
 		js  = new Vector<>();
 		
-		js.add(new Joueur(1, "ben", "beauGoss",NiveauAssistant.NON_UTILISE) );
-		js.add(new Joueur(2, "JM", "null", NiveauAssistant.COMPLET));
+		js.add(new Player(1, "ben", "beauGoss",NiveauAssistant.NON_UTILISE) );
+		js.add(new Player(2, "JM", "null", NiveauAssistant.COMPLET));
 		listeJoueur = new MonochromeListe<>("Coucou", js, new JoueurCellRenderer());
 
 		listeJoueur.setBounds(100,100,300,400);
@@ -72,7 +72,7 @@ public class TestListe {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				js.add(new Joueur(2, "JM", "null", NiveauAssistant.COMPLET));
+				js.add(new Player(2, "JM", "null", NiveauAssistant.COMPLET));
 				listeJoueur.updateList(new JoueurCellRenderer());
 			}
 		});

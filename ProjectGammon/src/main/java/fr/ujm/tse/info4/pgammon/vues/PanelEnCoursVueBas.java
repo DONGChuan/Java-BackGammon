@@ -63,7 +63,7 @@ public class PanelEnCoursVueBas extends JPanel{
 		add(plus);
 		plus.setVisible(false);
 		
-		JLabel labplus = new JLabel("Nouvelle session");
+		JLabel labplus = new JLabel("New Session");
 		labplus.setForeground(new Color(0xCCCCCC));
 		labplus.setBounds(680, 50, 130, 60);
 		add(labplus);
@@ -105,9 +105,8 @@ public class PanelEnCoursVueBas extends JPanel{
 	public void updateScore(int scoreJBlanc, int scoreJNoir){
 		scorej1 = scoreJBlanc;
 		scorej2 = scoreJNoir;
-		 panelScorej1.setScore(scorej1);
-		 panelScorej2.setScore(scorej2);
-		
+		panelScorej1.setScore(scorej1);
+		panelScorej2.setScore(scorej2);
 	}
 
 

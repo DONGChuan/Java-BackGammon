@@ -9,7 +9,7 @@ import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import fr.ujm.tse.info4.pgammon.models.CouleurCase;
-import fr.ujm.tse.info4.pgammon.models.Joueur;
+import fr.ujm.tse.info4.pgammon.models.Player;
 import fr.ujm.tse.info4.pgammon.models.NiveauAssistant;
 
 public class PanelJoueur extends MonochromePanel{
@@ -19,7 +19,7 @@ public class PanelJoueur extends MonochromePanel{
 	 */
 	
 	private static final long serialVersionUID = 7553310687895062778L;
-	private Joueur joueur;
+	private Player joueur;
 	private CouleurCase couleur;
 	
 	
@@ -42,7 +42,7 @@ public class PanelJoueur extends MonochromePanel{
 	 * @param j joueur passé en paramètre
 	 * @param coul CouleurCase passé en paramètre
 	 */
-		public PanelJoueur(Joueur j,CouleurCase coul){
+		public PanelJoueur(Player j,CouleurCase coul){
 			super("");
 			joueur=j;
 			couleur=coul;
@@ -56,7 +56,7 @@ public class PanelJoueur extends MonochromePanel{
 		 * Setter du joueur
 		 * @param j change la valeur du joueur
 		 */
-		public void setJoueur(Joueur j){
+		public void setJoueur(Player j){
 			joueur=j;
 			updateData();
 		}
@@ -265,7 +265,7 @@ public class PanelJoueur extends MonochromePanel{
 		 * Getter de joueur
 		 * @return retourne un joueur
 		 */
-		public Joueur getJoueur() {
+		public Player getJoueur() {
 			return joueur;
 		}
 

@@ -10,16 +10,16 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.ListCellRenderer;
 
-import fr.ujm.tse.info4.pgammon.models.Joueur;
+import fr.ujm.tse.info4.pgammon.models.Player;
 
-public class JoueurCellRenderer extends JPanel implements ListCellRenderer<Joueur> {
+public class JoueurCellRenderer extends JPanel implements ListCellRenderer<Player> {
 	private static final long serialVersionUID = 2419031075848394031L;
 	JLabel label;
 	ImageAvatar imgjoueur;
-	Joueur joueur;
+	Player joueur;
 	public JoueurCellRenderer() {
 		label = new JLabel();
-		joueur = new Joueur();
+		joueur = new Player();
 		
 		setLayout(null);
 
@@ -41,8 +41,8 @@ public class JoueurCellRenderer extends JPanel implements ListCellRenderer<Joueu
 	}
 
 	@Override
-	public Component getListCellRendererComponent(JList<? extends Joueur> list,
-			Joueur j, int index, boolean isSelected, boolean cellHasFocus) {
+	public Component getListCellRendererComponent(JList<? extends Player> list,
+			Player j, int index, boolean isSelected, boolean cellHasFocus) {
 		
 		label.setForeground(new Color(0xCCCCCC));
 		Color bgColor;

@@ -6,7 +6,7 @@ import java.awt.FlowLayout;
 import javax.swing.JFrame;
 
 import fr.ujm.tse.info4.pgammon.gui.Avatar;
-import fr.ujm.tse.info4.pgammon.models.Joueur;
+import fr.ujm.tse.info4.pgammon.models.Player;
 import fr.ujm.tse.info4.pgammon.models.NiveauAssistant;
 import fr.ujm.tse.info4.pgammon.vues.VueNouvelleSession;
 
@@ -27,8 +27,8 @@ public class TestVueNouvelleSession {
 			Container panel = frame.getContentPane();
 			panel.setLayout(new FlowLayout());
 			
-			Joueur jBlanc = new Joueur(1, "ben", Avatar.CHAT_JAUNE.getPath(),NiveauAssistant.NON_UTILISE);
-			Joueur jNoir = new Joueur(2, "JM", Avatar.CHEVAL.getPath(), NiveauAssistant.COMPLET);
+			Player jBlanc = new Player(1, "ben", Avatar.CHAT_JAUNE.getPath(),NiveauAssistant.NON_UTILISE);
+			Player jNoir = new Player(2, "JM", Avatar.CHEVAL.getPath(), NiveauAssistant.COMPLET);
 			
 			//ParametreJeu param = new ParametreJeu(0, 3, true, jBlanc, jNoir);
 			

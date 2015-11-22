@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 import fr.ujm.tse.info4.pgammon.gui.ImageAvatar;
 import fr.ujm.tse.info4.pgammon.gui.MonochromeCheckbox;
 import fr.ujm.tse.info4.pgammon.models.CouleurCase;
-import fr.ujm.tse.info4.pgammon.models.Joueur;
+import fr.ujm.tse.info4.pgammon.models.Player;
 import fr.ujm.tse.info4.pgammon.models.NiveauAssistant;
 
 public class PanelJoueurVuePartie extends JPanel {
@@ -27,7 +27,7 @@ public class PanelJoueurVuePartie extends JPanel {
 	 */
 	private static final long serialVersionUID = -7344853213808679707L;
 
-	private Joueur joueur;
+	private Player joueur;
 	private CouleurCase couleur;
 
 
@@ -46,7 +46,7 @@ public class PanelJoueurVuePartie extends JPanel {
 	 * @param j Joueur passé en paramètre
 	 * @param coul CouleurCase passé en paramètre
 	 */
-	public PanelJoueurVuePartie(Joueur j,CouleurCase coul){
+	public PanelJoueurVuePartie(Player j,CouleurCase coul){
 		joueur=j;
 		couleur=coul;
 
@@ -140,9 +140,6 @@ public class PanelJoueurVuePartie extends JPanel {
 
 	}
 	
-
-
-
 	/**
 	 * Getter du checkbox coup possible
 	 * @return retoure la checkbox
@@ -191,7 +188,7 @@ public class PanelJoueurVuePartie extends JPanel {
 	 * Getter de joueur
 	 * @return retoure un joueur
 	 */
-	public Joueur getJoueur() {
+	public Player getJoueur() {
 		return joueur;
 	}
 
@@ -225,11 +222,8 @@ public class PanelJoueurVuePartie extends JPanel {
 		g2.setPaint(p); 
 		g2.drawRect(2, 0, w - 5 , h - 5);
 
-
 		g.drawImage(imgpion.getImage(),80,55,this);
 		g2.dispose(); 
-
-
 	}
 
 }

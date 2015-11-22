@@ -39,7 +39,7 @@ public class ControleurPrincipal implements Controleur{
 	public ControleurPrincipal(Master master) {
 		this.master = master;
 		controleurPrincipal= this;
-		frame = new JFrame("Jeu de Backgammon");
+		frame = new JFrame("Backgammon Game");
 		session =null;
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);

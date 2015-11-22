@@ -19,7 +19,7 @@ import fr.ujm.tse.info4.pgammon.gui.MonochromeIconButton;
 import fr.ujm.tse.info4.pgammon.gui.PanelJoueur;
 import fr.ujm.tse.info4.pgammon.gui.PanelParametre;
 import fr.ujm.tse.info4.pgammon.models.CouleurCase;
-import fr.ujm.tse.info4.pgammon.models.Joueur;
+import fr.ujm.tse.info4.pgammon.models.Player;
 
 public class VueNouvelleSession extends JPanel{
 	
@@ -28,7 +28,6 @@ public class VueNouvelleSession extends JPanel{
 	 */
 	private static final long serialVersionUID = -5590865478480555417L;
 	
-
 	private MonochromeButton boutonCommencer; 
 	private MonochromeIconButton boutonChangerCouleur; 
 	private PanelJoueur panelJoueur1;
@@ -38,18 +37,15 @@ public class VueNouvelleSession extends JPanel{
 	private MonochromeButton boutonChangerJoueurBlanc;
 	private MonochromeButton boutonChangerJoueurNoir;
 	
-	private Joueur j1;
-	private Joueur j2;
+	private Player j1;
+	private Player j2;
 
-	
 	/**
 	 * Constructeur de notre classe/vue
 	 */
 	public VueNouvelleSession(){
-			
-			build();
-		}
-	
+		build();
+	}
 	
 	/**
 	 * Méthode permettant de faire l'affichage de notre vue 
@@ -66,15 +62,14 @@ public class VueNouvelleSession extends JPanel{
 		panelJoueur2 = new PanelJoueur(j2,CouleurCase.NOIR);
 		panelParamètre = new PanelParametre();
 		
-		
-		 boutonCommencer = new MonochromeButton("Commencer");
+		boutonCommencer = new MonochromeButton("Start");
 		 
-		 boutonChangerCouleur = new MonochromeIconButton(IconMonochromeType.SWITCH,"MonochromeIconButton","NOIR");
-		 boutonChangerCouleur.setSizeBig();
-		 boutonChangerCouleur.setBounds(10, 34, boutonChangerCouleur.getPreferredSize().width, boutonChangerCouleur.getPreferredSize().height);
-		 add(boutonChangerCouleur);
+		boutonChangerCouleur = new MonochromeIconButton(IconMonochromeType.SWITCH,"MonochromeIconButton","NOIR");
+		boutonChangerCouleur.setSizeBig();
+		boutonChangerCouleur.setBounds(10, 34, boutonChangerCouleur.getPreferredSize().width, boutonChangerCouleur.getPreferredSize().height);
+		add(boutonChangerCouleur);
 		 
-		 boutonChangerJoueurBlanc = new MonochromeButton("Change");
+		boutonChangerJoueurBlanc = new MonochromeButton("Change");
 		boutonChangerJoueurBlanc.setBounds(250, 75, 105, 50);
 		//boutonChangerJoueurBlanc.setFont(new Font("Arial", Font.PLAIN, 8));
 		add(boutonChangerJoueurBlanc);
@@ -83,30 +78,21 @@ public class VueNouvelleSession extends JPanel{
 		boutonChangerJoueurNoir.setBounds(250, 285, 105, 50);
 		add(boutonChangerJoueurNoir);
 		 
+		panelJoueur1.setBounds(37, 35, 332, 141);
+		panelJoueur2.setBounds(37, 245, 332, 141);
+		panelParamètre.setBounds(420, 35, 344, 352);
 		 
-		 panelJoueur1.setBounds(37, 35, 332, 141);
+		boutonCommencer.setBounds(200,420,380,58);
+		boutonChangerCouleur.setBounds(175,190,55,55);
 		 
-		 panelJoueur2.setBounds(37, 245, 332, 141);
+		add(panelJoueur1);
+		add(panelJoueur2);
+		add(panelParamètre);
+		add(boutonCommencer);
+		add(boutonChangerCouleur);
 		 
-		 panelParamètre.setBounds(420, 35, 344, 352);
-		 
-		 
-		 boutonCommencer.setBounds(200,420,380,58);
-		 
-		 boutonChangerCouleur.setBounds(175,190,55,55);
-		 
-		 
-		 add(panelJoueur1);
-		 add(panelJoueur2);
-		 add(panelParamètre);
-		 add(boutonCommencer);
-		 add(boutonChangerCouleur);
-		 
-		 listenerBoutonChangerCouleur();
-		
-		
+		listenerBoutonChangerCouleur();
 	}
-	
 	
 	/**
 	 * Getter du bouton pour changer le joueur blanc 
@@ -141,33 +127,30 @@ public class VueNouvelleSession extends JPanel{
 			public void mouseEntered(MouseEvent e) {}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Joueur jou1=j1;
-				Joueur jou2=j2;
+				Player jou1=j1;
+				Player jou2=j2;
 				setJoueur1(jou2);
 				setJoueur2(jou1);
 			}
 		});
 	}
 	
-	
 	/**
 	 * Setter du joueur blanc
 	 * @param jBlanc Joueur blanc passé en paramètre
 	 */
-	public void setJoueur1(Joueur jBlanc){
+	public void setJoueur1(Player jBlanc){
 		panelJoueur1.setJoueur(jBlanc);
 		j1=jBlanc;
-		
 	}
 
 	/**
 	 * Setter du joueur noir
 	 * @param jNoir Joueur noit passé en paramètre
 	 */
-	public void setJoueur2(Joueur jNoir) {
+	public void setJoueur2(Player jNoir) {
 		panelJoueur2.setJoueur(jNoir);
 		j2=jNoir;
-		
 	}
 	
 	/**
@@ -185,11 +168,6 @@ public class VueNouvelleSession extends JPanel{
 	public MonochromeIconButton getBoutonChangerCouleur() {
 		return boutonChangerCouleur;
 	}
-
-	/**
-	 * Getter du bouton retour menu principal
-	 * @return retourne le bouton retour
-	 */
 
 	/**
 	 * Getter du panel joueur noir permettant l'affichage du panel joueur blanc
@@ -214,10 +192,6 @@ public class VueNouvelleSession extends JPanel{
 	public PanelParametre getPanelParamètre() {
 		return panelParamètre;
 	}
-
-
-	
-
 	
 	@Override
 	protected void paintComponent(Graphics g) {

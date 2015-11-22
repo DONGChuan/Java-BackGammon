@@ -27,7 +27,7 @@ import org.jdom2.output.XMLOutputter;
 
 public class Profils
 {
-	public List<Joueur> joueurs = new ArrayList<Joueur>();
+	public List<Player> joueurs = new ArrayList<Player>();
 	private List<Element> listJoueurs;
 	private static  Profils profil;
 	
@@ -96,7 +96,7 @@ public class Profils
 		 Iterator<Element> it = listJoueurs.iterator();
 		 
 		 while(it.hasNext()){
-			 Joueur j = new Joueur();
+			 Player j = new Player();
 			 j.charger(it.next());
 			 joueurs.add(j);
 		 }
@@ -112,7 +112,7 @@ public class Profils
 					 if(joueurs.get(i).getId()== Integer.valueOf(e.getAttributeValue("id")))//Chercher lequel joueur qu'on va charger leur MAP.
 						 for(int j=0;j<joueurs.size();j++){
 							 if(joueurs.get(j).getId()== Integer.valueOf(c.getAttributeValue("id"))){//Chercher lequel joueur est L'Adversaire
-								 Joueur jcontre = joueurs.get(j);
+								 Player jcontre = joueurs.get(j);
 								 joueurs.get(i).getStat().getNbrDePartieContreJoueur().put(jcontre,Integer.valueOf(c.getChildText("nbrPartie")));
 							 }
 						 }
@@ -125,11 +125,11 @@ public class Profils
 	 */
 	public void ajouter(String _pseudo,String _imageSource,NiveauAssistant _niveau){
 		
-		joueurs.add(new Joueur(joueurs.size()+1,_pseudo,_imageSource,_niveau));
+		joueurs.add(new Player(joueurs.size()+1,_pseudo,_imageSource,_niveau));
 		
 	}
 	
-	public void modifierPseudo(String _pseudo,Joueur j){
+	public void modifierPseudo(String _pseudo,Player j){
 		
 		for(int i=0;i<joueurs.size();i++){
 			if(joueurs.get(i).getId()==j.getId()){
@@ -138,7 +138,7 @@ public class Profils
 		}
 	}
 	
-	public void modifierImageSource(String _imageSource,Joueur j){
+	public void modifierImageSource(String _imageSource,Player j){
 		
 		for(int i=0;i<joueurs.size();i++){
 			if(joueurs.get(i).getId()==j.getId()){
@@ -147,7 +147,7 @@ public class Profils
 		}
 	}
 	
-	public void supprimer(Joueur j)
+	public void supprimer(Player j)
 	{
 		for(int i=0;i<joueurs.size();i++){
 			if(joueurs.get(i).getId() == j.getId()){
@@ -162,11 +162,11 @@ public class Profils
 		}
 	}
 	
-	public List<Joueur> getList(){
+	public List<Player> getList(){
 		return joueurs;
 	}
 	
-	public Joueur getJoueur(int id){
+	public Player getJoueur(int id){
 		
 		for(int i=0;i<joueurs.size();i++){
 			if(joueurs.get(i).getId()==id)
